@@ -3,7 +3,7 @@
 # This class is responsible for saving the current state of the game to a file.
 # It provides a method to save the game by serializing the game object and writing it to a file.
 class SaveManager
-  SAVE_FILE = '../saves/save_file.txt'
+  SAVE_FILE = 'saves/save_file.txt'
 
   def self.save_game(game)
     File.binwrite(SAVE_FILE, Marshal.dump(game))
