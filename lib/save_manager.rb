@@ -12,6 +12,6 @@ class SaveManager
   def self.load_game
     return nil unless File.exist?(SAVE_FILE)
 
-    Marshal.load(File.binread(SAVE_FILE))
+    Marshal.load(File.binread(SAVE_FILE)) # rubocop:disable Security/MarshalLoad
   end
 end

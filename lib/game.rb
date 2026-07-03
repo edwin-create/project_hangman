@@ -11,7 +11,7 @@ class Game
     @display = Display.new
   end
 
-  def play
+  def play # rubocop:disable Metrics/MethodLength
     @display.welcome
 
     until game_over?
