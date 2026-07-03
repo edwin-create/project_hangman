@@ -19,10 +19,11 @@ class Game
 
       guess = @display.prompt_for_guess
 
-      if guess == 'save'
+      if save_requested?(guess)
         SaveManager.save_game(self)
         @display.show_game_saved
         next
+
       end
 
       unless valid_guess?(guess)
@@ -49,5 +50,9 @@ class Game
 
   def valid_guess?(guess)
     guess.length == 1 && guess.match?(/[a-zA-Z]/)
+  end
+
+  def save_requested?(guess)
+    guess == 'save'
   end
 end
