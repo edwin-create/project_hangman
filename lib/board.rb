@@ -6,6 +6,8 @@
 
 # Class Board represents the game board for Hangman.
 class Board
+  attr_reader :incorrect_guesses, :remaining_guesses
+
   def initialize(secret_word)
     @secret_word = secret_word
     @incorrect_guesses = []
